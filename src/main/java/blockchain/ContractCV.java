@@ -40,5 +40,39 @@ class ContractCV extends CorrectnessVerifier {
         }
 
     }
+    
+    // Code for 2nd smart contract
+    /*
+        @Override
+        public boolean isCorrect(Transaction t) {
+            try {
+                NodeInfo ndowner = owner.searchByNumID(t.getOwner());
+                LightChainRMIInterface ownerRMI = owner.getLightChainRMI(ndowner.getAddress());
+                int token1 = ownerRMI.getToken();
+                int Nmode = owner.Tmode;
+                owner.logger.debug("mode: "+Nmode);
+                int Psell = 10;
+                tesq.setup();
+                int value = tesq.basicTransfer(token1, ct.contractName2, ct.functname2, Nmode, Psell);
+                owner.logger.debug(value); 
+                owner.view.updateToken(t.getOwner(),value);
+                int newToken = owner.view.getToken(t.getOwner());
+                owner.logger.debug("updated value "+ newToken);
+                if (Nmode == 1) {
+                    if (newToken < token1) return true;
+                    else return false;
+                }
+                else {
+                    if (newToken > token1) return true;
+                    else return false;
+                }
+            } 
+            catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+
+        }
+    */
 }
 
