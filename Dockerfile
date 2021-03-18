@@ -6,10 +6,11 @@ run mkdir /app
 COPY target/lightchain-container-*-jar-with-dependencies.jar /app
 COPY src/main/resources/log4j.properties /app
 COPY simulation.config /app
-COPY contracts/*.sol /app/
+COPY contracts/*.sol /app
 WORKDIR /app
-# NOTE: I hard coded the filename here (eg. testcon.sol)
-RUN  solc -o . --bin testcon.sol
+
+ARG FILENAME  
+RUN  solc -o . --bin $FILENAME
 
 # Here we use a java container for further simulation
 FROM openjdk:8u242-jre
