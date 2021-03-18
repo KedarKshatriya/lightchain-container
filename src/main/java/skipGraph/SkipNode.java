@@ -1042,8 +1042,4 @@ public class SkipNode extends UnicastRemoteObject implements RMIInterface {
         }
     }
 
-    public SkipNode() throws RemoteException {
-		super();
-	}
-
 }

@@ -1,9 +1,12 @@
 package evm;
 
 import org.ethereum.vm.client.Transaction;
-
 import java.math.BigInteger;
 
+/**
+* This method is the class containing TransactionMock() function
+* which is used to create a psuedo transaction when the EVM functions.
+*/
 public class TransactionMock implements Transaction {
 
     private boolean isCreate;
@@ -27,9 +30,7 @@ public class TransactionMock implements Transaction {
      * @param gas refers to the cost necessary to perform a transaction
      * @param gasPrice price of gas the requestor is willing to pay for this transaction
 	 */
-
-    public TransactionMock(boolean isCreate, byte[] from, byte[] to, long nonce, BigInteger value, byte[] data,
-                           long gas, BigInteger gasPrice) {
+    public TransactionMock(boolean isCreate, byte[] from, byte[] to, long nonce, BigInteger value, byte[] data,long gas, BigInteger gasPrice) {
         this.isCreate = isCreate;
         this.from = from;
         this.to = to;
